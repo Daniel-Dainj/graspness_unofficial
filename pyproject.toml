@@ -1,0 +1,56 @@
+[project]
+name = "graspness-unofficial"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = "~=3.9.0"
+dependencies = [
+    "torch==1.8.0+cu111",
+    "torchvision==0.9.0+cu111",
+
+    "graspnetAPI==1.2.11",
+    "open3d",
+    "pillow",
+    "scikit-learn",
+    "tqdm",
+
+    "knn-pytorch",
+    "pointnet2",
+    "MinkowskiEngine",
+    "tensorboard",
+]
+
+[tool.uv]
+build-constraint-dependencies = [
+  "setuptools<81",
+]
+exclude-dependencies = [
+  "sklearn"
+]
+override-dependencies = [
+  "numpy==1.23.4",
+]
+
+[tool.uv.extra-build-dependencies]
+knn-pytorch = [
+  "numpy==1.23.4",
+  "torch==1.8.0+cu111",
+]
+pointnet2 = [
+  "numpy==1.23.4",
+  "torch==1.8.0+cu111",
+]
+minkowskiengine = [
+  "numpy==1.23.4",
+  "torch==1.8.0+cu111",
+]
+
+[[tool.uv.index]]
+url = "https://mirrors.ustc.edu.cn/pypi/simple"
+default = true
+
+[tool.uv.sources]
+torch = { url = "https://mirrors.aliyun.com/pytorch-wheels/cu111/torch-1.8.0+cu111-cp39-cp39-linux_x86_64.whl" }
+torchvision = { url = "https://mirrors.aliyun.com/pytorch-wheels/cu111/torchvision-0.9.0+cu111-cp39-cp39-linux_x86_64.whl" }
+knn-pytorch = { path = "./knn" }
+pointnet2 = { path = "./pointnet2" }

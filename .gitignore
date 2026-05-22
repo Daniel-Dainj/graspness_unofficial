@@ -1,17 +1,12 @@
-**/__pycache__/**
-*.ipynb
-**/.ipynb_checkpoints/**
-*.npy
-*.npz
-**/.vscode/**
-**/grasp_label*/**
-**/log*/**
-**/dump*/**
-**/build/**
-*.o
-*.so
-*.egg
-**/*.egg-info/**
-logs
-dataset/tolerance
-**/.idea/
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
+uv.lock
